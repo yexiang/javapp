@@ -38,9 +38,9 @@ public class JavaApplication1 {
         System.out.println("Hello Java");
         connDB();
 
-
         for (int i = Integer.parseInt(args[1]); i < Integer.parseInt(args[2]); i++) {
-            getResponse("http://bbs.gghappy.com/forum.php?mod=forumdisplay&fid=" + args[0] + "&page=" + i);
+            String form_url = NewClass.readKey("form_url");
+            getResponse( form_url + "forum.php?mod=forumdisplay&fid=" + args[0] + "&page=" + i);
         }
         if (!conn.isClosed()) {
             System.out.println("Succeeded close the Database!");
